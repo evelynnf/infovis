@@ -5,6 +5,7 @@ function Bars(props) {
 
     // Define state to track the station name of the hovered bar
     // const [selectedStation, setSelectedStation] = useState(null);
+
     // handle mouse enter, changes the selected station
     const handleMouseEnter = (station) => {
         setSelectedStation(station);

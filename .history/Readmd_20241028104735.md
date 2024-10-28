@@ -1,3 +1,0 @@
-#InfoVis Assignments
-
-This is the folder of infomation visualization course assignemnts.

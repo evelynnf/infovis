@@ -15,7 +15,7 @@ function Routes(props){
             {filteredRoutes.map((route, index) => {
                 // Project the source and destination coordinates
                 const [x1, y1] = projection([route.SourceLongitude, route.SourceLatitude]);
-                const [x2, y2] = projection([route.DestLongitude, route.DestLatitude]);
+                const [x2, y2] = projection([route.destLongitude, route.destLatitude]);
 
                 return (
                     <line
@@ -24,9 +24,9 @@ function Routes(props){
                         y1={y1}
                         x2={x2}
                         y2={y2}
-                        stroke="#992a5b"
+                        stroke="#2a5599"
                         strokeWidth={0.5}
-                        opacity={0.2}
+                        opacity={0.7}
                     />
                 );
             })}

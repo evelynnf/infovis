@@ -4,7 +4,7 @@ import { XAxis, YAxis } from "./axes";
 
 
 export function BarChart (props) {
-    const {offsetX, offsetY, data, height, width, selectedAirlineID, setSelectedAirlineID} = props;
+    const {offsetX, offsetY, data, height, width, selectedAirline, setSelectedAirline} = props;
     // Task 1: TODO
     // 1. find the maximum of the Count attribute in the data
     // 2. define the xScale and yScale
@@ -37,8 +37,16 @@ export function BarChart (props) {
     const color = d => d.AirlineID === selectedAirlineID ? "#992a5b" : "#2a5599";
     
     const onMouseOver = d => {setSelectedAirlineID(d)};
+    
+    // const handleMouseEnter = (station) => {
+    //     setSelectedStation(station);
+    // };
 
     const onMouseOut = () => {setSelectedAirlineID(null)};
+
+    // const handleMouseOut = () => {
+    //     setSelectedStation(null);
+    // };
 
     const bars = data.map(d => (
         <rect

@@ -29,7 +29,7 @@ function XAxis(props) {
 
     return <g transform={`translate(${0}, ${height})`}>
         {<line x2={width+10} stroke='black'/>}
-        {xScale.ticks(5).map(tickValue => 
+        {xScale.ticks(8).map(tickValue => 
             <g key={tickValue} transform={`translate(${xScale(tickValue)}, ${0})`}>
                 <line y2={10} stroke='black' />
                 <text style={{ textAnchor:'end', fontSize:'10px' }} x={5} y={20}>

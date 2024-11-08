@@ -38,7 +38,7 @@ export function BarChart (props) {
     
     const onMouseOver = d => {setSelectedAirlineID(d)};
 
-    const onMouseOut = () => {setSelectedAirlineID(null)};
+    const onMouseOut = () => {setSelectedAirline(null)};
 
     const bars = data.map(d => (
         <rect

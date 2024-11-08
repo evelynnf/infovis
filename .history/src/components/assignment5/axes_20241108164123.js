@@ -16,7 +16,7 @@ function YAxis (props) {
                 {/* <text style={{ textAnchor:'start', fontSize:'10px' }} x={-offsetX+10} y={yScale.bandwidth()/2}>
                     {tickValue}
                 </text> */}
-                <text style={{textAnchor: 'start', fontSize:'10px'}} x={-125} y={yScale(tickValue) + yScale.bandwidth()/2 + 5}>
+                <text style={{textAnchor: 'start', fontSize:'10px'}} x={-115} y={yScale(tickValue) + yScale.bandwidth()/2 + 5}>
                     {tickValue}
                 </text>
             </g>
@@ -28,7 +28,7 @@ function XAxis(props) {
     const { xScale, width, height} = props;
 
     return <g transform={`translate(${0}, ${height})`}>
-        {<line x2={width+10} stroke='black'/>}
+        {<line x2={width} stroke='black'/>}
         {xScale.ticks(5).map(tickValue => 
             <g key={tickValue} transform={`translate(${xScale(tickValue)}, ${0})`}>
                 <line y2={10} stroke='black' />

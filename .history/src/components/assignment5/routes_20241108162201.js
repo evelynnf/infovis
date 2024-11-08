@@ -24,9 +24,9 @@ function Routes(props){
                         y1={y1}
                         x2={x2}
                         y2={y2}
-                        stroke="#992a5b"
+                        fill="#992a5b"
                         strokeWidth={0.5}
-                        opacity={0.2}
+                        opacity={0.5}
                     />
                 );
             })}

@@ -26,7 +26,7 @@ function Routes(props){
                         y2={y2}
                         stroke="#992a5b"
                         strokeWidth={0.5}
-                        opacity={0.2}
+                        opacity={0.7}
                     />
                 );
             })}

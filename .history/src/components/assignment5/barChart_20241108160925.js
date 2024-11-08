@@ -36,9 +36,9 @@ export function BarChart (props) {
     
     const color = d => d.AirlineID === selectedAirlineID ? "#992a5b" : "#2a5599";
     
-    const onMouseOver = d => {setSelectedAirlineID(d)};
+    const onMouseOver = d => {setSelectedAirline(d)};
 
-    const onMouseOut = () => {setSelectedAirlineID(null)};
+    const onMouseOut = () => {setSelectedAirline(null)};
 
     const bars = data.map(d => (
         <rect

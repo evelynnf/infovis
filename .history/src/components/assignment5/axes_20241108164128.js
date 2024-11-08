@@ -28,7 +28,7 @@ function XAxis(props) {
     const { xScale, width, height} = props;
 
     return <g transform={`translate(${0}, ${height})`}>
-        {<line x2={width+10} stroke='black'/>}
+        {<line x2={width} stroke='black'/>}
         {xScale.ticks(5).map(tickValue => 
             <g key={tickValue} transform={`translate(${xScale(tickValue)}, ${0})`}>
                 <line y2={10} stroke='black' />

@@ -42,7 +42,7 @@ function AirlineRoutes(){
     const [selectedAirlineID, setSelectedAirlineID]=React.useState(null);
     const barchart_width = 350;
     const barchart_height = 400;
-    const barchart_margin = { top: 10, bottom: 50, left: 130, right: 10 };
+    const barchart_margin = { top: 10, bottom: 50, left: 130, right: 5 };
     const barchart_inner_width = barchart_width - barchart_margin.left - barchart_margin.right-9;
     const barchart_inner_height = barchart_height - barchart_margin.top - barchart_margin.bottom;
     const map_width = 600;

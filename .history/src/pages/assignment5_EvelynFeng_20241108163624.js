@@ -43,7 +43,7 @@ function AirlineRoutes(){
     const barchart_width = 350;
     const barchart_height = 400;
     const barchart_margin = { top: 10, bottom: 50, left: 130, right: 10 };
-    const barchart_inner_width = barchart_width - barchart_margin.left - barchart_margin.right-9;
+    const barchart_inner_width = barchart_width - barchart_margin.left - barchart_margin.right;
     const barchart_inner_height = barchart_height - barchart_margin.top - barchart_margin.bottom;
     const map_width = 600;
     const map_height = 400;
@@ -74,7 +74,7 @@ function AirlineRoutes(){
         </Col>
         <Col lg={4} >
             <h2>Airports</h2>
-            <svg id={"map"} width={map_width} height={map_height} className={svgStyle}>
+            <svg id={"map"} width={map_width} height={map_height} className={"svgStyle"}>
                 <AirportMap width={map_width} height={map_height} 
                     countries={map} airports={airports} routes={routes}
                     selectedAirlineID={selectedAirlineID}

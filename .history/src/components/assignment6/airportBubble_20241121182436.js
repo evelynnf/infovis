@@ -110,11 +110,11 @@ function AirportBubble(props){
                     <g key={idx} transform={`translate(${d.x}, ${d.y})`}>
                         <circle
                             r={radius(d.Count)}
-                            fill={isTop6 ? "#ADD8E6" : "#2a5599"}
+                            fill={isTop5 ? "#ADD8E6" : "#2a5599"}
                             stroke="black"
                             strokeWidth="2"
                         />
-                        {isTop6 && (
+                        {isTop5 && (
                             <text
                                 style={{
                                     textAnchor: "middle",

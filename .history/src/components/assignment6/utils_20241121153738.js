@@ -62,8 +62,7 @@ function groupByCity(data) {
     //Hint: you need to use d.DestCity and d.SourceCity;
     let result = data.reduce((result, d) => {
         let currentDest = result[d.DestCity] || {
-            "AirportID": d.DestAirportID,
-            "Airport": d.DestAirport,
+
             "City": d.DestCity,
             "Latitude": +d.DestLatitude,
             "Longitude": +d.DestLongitude,
@@ -88,6 +87,7 @@ function groupByCity(data) {
         return result;
     }, {})
 
+    //We use this to convert the dictionary produced by the code above, into a list, that will make it easier to create the visualization. 
     result = Object.keys(result).map(key => result[key]);
     result = result.sort((a, b) => b.Count - a.Count); //Sort the data in descending order of count.
     return result

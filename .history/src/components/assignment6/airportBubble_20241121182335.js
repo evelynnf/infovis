@@ -105,16 +105,16 @@ function AirportBubble(props){
 
         return <g>
             {cities.map((d, idx) => {
-                let isTop6 = idx >= cities.length - 6;
+                let isTop5 = idx >= cities.length - 5;
                 return (
                     <g key={idx} transform={`translate(${d.x}, ${d.y})`}>
                         <circle
                             r={radius(d.Count)}
-                            fill={isTop6 ? "#ADD8E6" : "#2a5599"}
+                            fill={isTop5 ? "#ADD8E6" : "#2a5599"}
                             stroke="black"
                             strokeWidth="2"
                         />
-                        {isTop6 && (
+                        {isTop5 && (
                             <text
                                 style={{
                                     textAnchor: "middle",

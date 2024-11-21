@@ -32,7 +32,8 @@ function AirportBubble(props){
             .force("x", forceX(width / 2).strength(0.02))
             .force("y", forceY(height / 2).strength(0.02))
             .force("collide", forceCollide(d => radius(d.Count)))
-            .stop();
+            .stop()
+            .tick(200);
 
         // Run the simulation for 200 ticks
         for (let i = 0; i < 200; i++) simulation.tick();
@@ -49,6 +50,7 @@ function AirportBubble(props){
         //     fill:"#992a2a", fontSize:16, fontFamily:"cursive", 
         //     paintOrder:"stroke", strokeLinejoin:"round"}}
         //Note: for each <circle />, please set the key={idx} to avoid the warnings.
+
         return <g>
             {cities.map((d, idx) => {
                 let isTop5 = idx >= cities.length - 5;
@@ -85,9 +87,12 @@ function AirportBubble(props){
         //1.Obtain an array of cities from the routes by groupByCity;
         //2.Plot the bubble chart; highlight the top 5 hub cities worldwide,
         //  using the same settings as the case when the selectedAirline is not null;
-        
         let cities = groupByCity(routes);
+
+        // Sort cities by ascending Count
         cities.sort((a, b) => a.Count - b.Count);
+
+        // Define a scale for the bubble radius
         let radius = scaleLinear()
             .domain([min(cities, d => d.Count), max(cities, d => d.Count)])
             .range([2, width * 0.15]);
@@ -105,16 +110,16 @@ function AirportBubble(props){
 
         return <g>
             {cities.map((d, idx) => {
-                let isTop6 = idx >= cities.length - 6;
+                let isTop5 = idx >= cities.length - 5;
                 return (
                     <g key={idx} transform={`translate(${d.x}, ${d.y})`}>
                         <circle
                             r={radius(d.Count)}
-                            fill={isTop6 ? "#ADD8E6" : "#2a5599"}
+                            fill={isTop5 ? "#ADD8E6" : "#2a5599"}
                             stroke="black"
                             strokeWidth="2"
                         />
-                        {isTop6 && (
+                        {isTop5 && (
                             <text
                                 style={{
                                     textAnchor: "middle",

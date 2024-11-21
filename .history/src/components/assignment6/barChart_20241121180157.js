@@ -11,15 +11,7 @@ export function BarChart (props) {
     let color = (d) => d.AirlineID===selectedAirline? "#992a5b":"#2a5599";
     let onMouseOver = (d) => setSelectedAirline(d.AirlineID);
     let onMouseOut = () => setSelectedAirline('null');
-    let onClick = (d) => {
-        if (selectedAirline === d.AirlineID) {
-            // If the clicked bar is already selected, unselect it
-            setSelectedAirline(null);
-        } else {
-            // Otherwise, set it as the selected airline
-            setSelectedAirline(d.AirlineID);
-        }
-    };
+    let onClick = (d) => setSelectedAirline(d.AirlineID);
     //TODO:
     //1.Change the mouse event in <rect/> to onClick;
     //2.Remove the onMouseOut in <rect />;

@@ -66,7 +66,7 @@ export function LineChart(props) {
             d={lineGenerator("avg_tempo")(groupData)}
             fill="none"
             stroke="red"
-            strokeWidth={1.5}
+            strokeWidth={1}
           />
 
           {/* 数据点 */}
@@ -77,7 +77,7 @@ export function LineChart(props) {
                 <circle
                   cx={xScale(d.popularity_group)}
                   cy={yScale(d.avg_danceability)}
-                  r={2.5}
+                  r={2}
                   fill="blue"
                 />
               )}
@@ -86,7 +86,7 @@ export function LineChart(props) {
                 <circle
                   cx={xScale(d.popularity_group)}
                   cy={yScale(d.avg_energy)}
-                  r={2.5}
+                  r={2}
                   fill="green"
                 />
               )}
@@ -95,7 +95,7 @@ export function LineChart(props) {
                 <circle
                   cx={xScale(d.popularity_group)}
                   cy={yScale(d.avg_tempo)}
-                  r={2.5}
+                  r={2}
                   fill="red"
                 />
               )}

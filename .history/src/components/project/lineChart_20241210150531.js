@@ -52,21 +52,21 @@ export function LineChart(props) {
             d={lineGenerator("avg_danceability")(groupData)}
             fill="none"
             stroke="blue"
-            strokeWidth={1.5}
+            strokeWidth={2}
           />
           {/* avg_energy 的曲线 */}
           <path
             d={lineGenerator("avg_energy")(groupData)}
             fill="none"
             stroke="green"
-            strokeWidth={1.5}
+            strokeWidth={2}
           />
           {/* avg_tempo 的曲线 */}
           <path
             d={lineGenerator("avg_tempo")(groupData)}
             fill="none"
             stroke="red"
-            strokeWidth={1.5}
+            strokeWidth={2}
           />
 
           {/* 数据点 */}
@@ -77,7 +77,7 @@ export function LineChart(props) {
                 <circle
                   cx={xScale(d.popularity_group)}
                   cy={yScale(d.avg_danceability)}
-                  r={2.5}
+                  r={4}
                   fill="blue"
                 />
               )}
@@ -86,7 +86,7 @@ export function LineChart(props) {
                 <circle
                   cx={xScale(d.popularity_group)}
                   cy={yScale(d.avg_energy)}
-                  r={2.5}
+                  r={4}
                   fill="green"
                 />
               )}
@@ -95,7 +95,7 @@ export function LineChart(props) {
                 <circle
                   cx={xScale(d.popularity_group)}
                   cy={yScale(d.avg_tempo)}
-                  r={2.5}
+                  r={4}
                   fill="red"
                 />
               )}
@@ -105,7 +105,7 @@ export function LineChart(props) {
       ))}
     <g transform={`translate(${width - right - 80}, ${top})`}>
         {/* avg_danceability 图例 */}
-        <rect x={0} y={0} width={10} height={10} fill="blue" />
+        <rect x={0} y={0} width={} height={10} fill="blue" />
         <text x={20} y={7} fontSize={12} alignmentBaseline="middle">
           Danceability
         </text>

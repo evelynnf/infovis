@@ -20,7 +20,7 @@ export function BarChart (props) {
             setSelectedAirline(d.AirlineID);
         }
     };
-    /** 
+    /** */
     //TODO:
     //1.Change the mouse event in <rect/> to onClick;
     //2.Remove the onMouseOut in <rect />;
@@ -32,7 +32,7 @@ export function BarChart (props) {
     //  Hint: You can compare the selectedAirline to d.AirlineID if they are the same,
     //  call setSelectedAirline(null);
     //4.Remove the onMouseOver and onMouseOut;
-    */
+    
     return <g transform={`translate(${offsetX}, ${offsetY})`}>
         { data.map( d => {
             return <rect key={d.AirlineID} x={0} y={yScale(d.AirlineName)}

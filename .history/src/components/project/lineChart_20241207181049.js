@@ -8,6 +8,7 @@ export function BarChart (props) {
     let maximunCount = max(data, d => d.Count);
     const xScale = scaleLinear().range([0, width]).domain([0, maximunCount]).nice();
     const yScale = scaleBand().range([0, height]).domain(data.map(a => a.AirlineName)).padding(0.2) //The domain is the list of ailines names
+    SpotifyAnalysis
     let color = (d) => d.AirlineID===selectedAirline? "#992a5b":"#2a5599";
     let onMouseOver = (d) => setSelectedAirline(d.AirlineID);
     let onMouseOut = () => setSelectedAirline('null');

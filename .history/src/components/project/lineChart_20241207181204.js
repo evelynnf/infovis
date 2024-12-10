@@ -6,11 +6,12 @@ import { XAxis, YAxis } from "./axes";
 export function BarChart (props) {
     const {offsetX, offsetY, data, height, width, selectedAirline, setSelectedAirline} = props;
     let maximunCount = max(data, d => d.Count);
-    const xScale = scaleLinear().range([0, width]).domain([0, maximunCount]).nice();
-    const yScale = scaleBand().range([0, height]).domain(data.map(a => a.AirlineName)).padding(0.2) //The domain is the list of ailines names
+    // const xScale = scaleLinear().range([0, width]).domain([0, maximunCount]).nice();
+    // const yScale = scaleBand().range([0, height]).domain(data.map(a => a.AirlineName)).padding(0.2) //The domain is the list of ailines names
+    const xScale = d3.scalePoint().range([0, 500]).domain(data.map((d) => d.song));
+    const yScale = scaleLinear().range([400, 0]).domain([0, 1]).nice();
+
     let color = (d) => d.AirlineID===selectedAirline? "#992a5b":"#2a5599";
-    let onMouseOver = (d) => setSelectedAirline(d.AirlineID);
-    let onMouseOut = () => setSelectedAirline('null');
     let onClick = (d) => {
         if (selectedAirline === d.AirlineID) {
             // If the clicked bar is already selected, unselect it
